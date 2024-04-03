@@ -54,5 +54,56 @@ Dans cette partie, nous créerons un client OpenAI ChatGPT pour interagir et gé
 
 Ce document fournit une base pour la création d'un bot WhatsApp fonctionnel utilisant l'API Meta Cloud, Flask et OpenAI. N'hésitez pas à l'étendre et à l'adapter à vos besoins spécifiques.
 
+### **Comment utiliser**
+
+#### **Configuration de l'environnement de développement**
+
+cree `.venv` and activate it :
+
+```
+$ python3 -m venv .venv
+$ source .venv/bin/activate
+```
+
+intall re `requirements.txt`
+
+```
+pip install -r requirements.txt
+```
+
+then run app :
+
+```
+python run.py
+```
+
+#### **Configuration de ngrok :**
+
+The steps below are taken from the [ngrok documentation](https://ngrok.com/docs/integrations/whatsapp/webhooks/).
+
+You need a static ngrok domain because Meta validates your ngrok domain and certificate!
+
+Once your app is running successfully on localhost, let's get it on the internet securely using ngrok!
+
+1- If you're not an ngrok user yet, just sign up for ngrok for free.
+2- Download the ngrok agent.
+3- Go to the ngrok dashboard, click Your [Authtoken](https://dashboard.ngrok.com/get-started/your-authtoken), and copy your Authtoken.
+4- Follow the instructions to authenticate your ngrok agent. You only have to do this once.
+5- On the left menu, expand Cloud Edge and then click Domains.
+6- On the Domains page, click + Create Domain or + New Domain. (here everyone can start with [one free domain](https://ngrok.com/blog-post/free-static-domains-ngrok-users))
+7- Start ngrok by running the following command in a terminal on your local desktop:
+
+```
+ngrok http 8000 --domain your-domain.ngrok-free.app
+
+```
+
+8- ngrok will display a URL where your localhost application is exposed to the internet (copy this URL for use with Meta).
+
+
+
+
+
+
 
 ![1712142537953](images/README/1712142537953.png)
